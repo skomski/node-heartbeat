@@ -1,0 +1,30 @@
+{
+    "name" : "heartbeat",
+    "description" : "Simple heartbeat emitter and checks",
+    "version" : "0.0.1",
+    "repository" : {
+      "type" : "git",
+      "url" : "git://github.com/skomski/node-heartbeat.git"
+    },
+    "main" : "index.js",
+    "keywords" : [
+      "check"
+    ],
+    "scripts" : {
+      "test" : "tap test/*.js"
+    },
+    "dependencies" : {},
+    "devDependencies" : {
+      "tap" : "0.0.x",
+      "sinon" : "~1.2.0"
+    },
+    "engines" : {
+      "node" : ">=0.4.0"
+    },
+    "license" : "MIT",
+    "author" : {
+      "name" : "Karl Skomski",
+      "email" : "mail@skomski.com",
+      "url" : "http://skomski.com"
+    }
+}
