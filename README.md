@@ -7,7 +7,7 @@ Simple heartbeat management.
 ## Install
 
 ```
-  npm install heartbeat
+npm install heartbeat
 ```
 
 ## Usage
@@ -18,10 +18,18 @@ var Heartbeat  = require('heartbeat');
 var timeout = 5000;
 var manager = new Heartbeat.Manager(timeout);
 var callback = function() {
-
+  // timeout
 }
 var id = '123';
+
+// create and start check
 manager.check(id, callback).start();
+
+// reset check before timeout fires
+manager.check(id).reset();
+
+// stop check
+manager.check(id).stop();
 ```
 ## License
 
