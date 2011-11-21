@@ -4,13 +4,17 @@ var sinon = require('sinon');
 var Heartbeat = require('../index');
 
 test('Create emitter and delete emitter', function (t) {
-  t.plan(5);
+  t.plan(6);
 
   var clock = sinon.useFakeTimers();
   var manager = new Heartbeat.Manager(1000);
   var cb = function() {
     t.ok(true, 'fire emitter callback once');
   };
+
+  manager.on('publish', function(id){
+    t.equal(id, '42');
+  });
 
   t.ok(manager.emitter('42', cb).start(), 'start emitter');
   clock.tick(1000);
@@ -22,13 +26,17 @@ test('Create emitter and delete emitter', function (t) {
 });
 
 test('Create check and delete check', function (t) {
-  t.plan(5);
+  t.plan(6);
 
   var clock = sinon.useFakeTimers();
   var manager = new Heartbeat.Manager(1000);
   var cb = function() {
     t.ok(true);
   };
+
+  manager.on('timeout', function(id){
+    t.equal(id, '42');
+  });
 
   t.ok(manager.check('42', cb).start());
   clock.tick(1000);
