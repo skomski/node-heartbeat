@@ -1,6 +1,6 @@
 # heartbeat
 
-[![Build Status](https://secure.travis-ci.org/skomski/node-heartbeat.png)](http://travis-ci.org/skomski/node-heartbeat)
+[![Build Status](https://secure.travis-ci.org/Skomski/node-heartbeat.png?branch=master)](http://travis-ci.org/Skomski/node-heartbeat)
 
 Simple heartbeat management.
 
